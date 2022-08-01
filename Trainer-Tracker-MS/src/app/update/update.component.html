@@ -1,0 +1,98 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>  
+
+    <h2 align="center">Update New Trainer's Schedule </h2>
+    <div class="container" style="max-width:1200px;padding:40px 20px;background:#ebeff2" align="center">
+     
+      <form class="form-horizontal" role="form" action="/action_page.php">
+        <div class="row row-cols-3 pt-3">
+          <div class="col text-end">
+            <label for="trainerid" class ="control-label col-sm-3"> Trainer ID:</label>
+          </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="trainerid"  name="nameVariable" [(ngModel)]="trainer.id">
+        </div>
+        </div>
+      <div class="row row-cols-3 pt-3">
+        <div class="col text-end">
+          <label for="email" class ="control-label col-sm-4">Trainer Name:</label>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-control" id="email"  name="nameVariable" [(ngModel)]="trainer.name">
+        </div>
+      </div>
+      <div class="row row-cols-3 pt-3">
+          <div class="col text-end">
+            <label for="email" class ="control-label col-sm-3">Batch Name:</label>
+          </div>
+        <div class="col-3">
+          <select name="batch" id="lang" style="width:368px" [(ngModel)]="trainer.batchname">
+            <option value="select">Select a batch</option>
+            <option value="itfs">ITFS</option>
+            <option value="bnk">BNK</option>
+            <option value="acc">Financial account</option>
+            <option value="acc">Soft Skils</option>
+          </select>
+        </div>
+        </div>
+         
+          <div class="row row-cols-3 pt-3">
+            <div class="col text-end">
+                <label for="nameVariable" class="form-label">Domain:</label>
+            </div>
+            <div class="col-4">
+              <select name="domain" id="lang" style="width:368px">
+                <option value="select">Select a domain</option>
+                <option value="it">IT</option>
+                <option value="nonit">Non IT</option>
+                <option value="bpa">BPA</option>
+                <option value="oth">Others</option>
+                </select>
+            </div>
+        </div>
+          <div class="row row-cols-3 pt-3">
+            <div class="col text-end">
+            <label for="nameVariable" class ="form-label">Subject:</label>
+          </div>
+        <div class="col-4">
+          <select name="sub" id="lang" style="width:368px">
+            <option value="select">Select a Subject</option>
+            <option value="java">Java</option>
+            <option value="sql">SQL</option>
+            <option value="js">JS</option>
+            </select>
+        </div>
+          </div>
+          
+          <div class="row row-cols-3 pt-3">
+            <div class="col text-end">
+                <label for="nameVariable" class="form-label">Start Date:</label>
+            </div>
+            <div class="col-4">
+                <input type="date" class="form-control" name="nameVariable" >
+            </div>
+        </div>
+        <div class="row row-cols-3 pt-3">
+          <div class="col text-end">
+              <label for="nameVariable" class="form-label">End Date:</label>
+          </div>
+          <div class="col-4">
+              <input type="date" class="form-control" name="nameVariable" >
+          </div>
+      </div>
+            <br>
+  
+         
+            <div class="text-center" >
+             <button  type="submit" class="btn btn-primary">UPDATE</button>
+             <a class="btn btn-danger" routerLink='/home' role="button">CANCEL</a>
+        
+            </div>
+         
+      </form>
+    </div>
+   
+    </body>
+  

@@ -1,0 +1,43 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <Script>
+      function submission()
+      {
+        var user=document.getElementById("uname").value;
+        var pwd=document.getElementById("psw").value;
+
+        if(user=="can@gmail.com" || pwd=="asdf")
+        {
+          alert('suecessfully');
+        }
+        else
+        {
+          alert('pls fill form');
+        }
+      }
+    </Script>
+    </head>
+    <body class="login">
+    
+    <h1 >Login </h1>
+    <div class="formm">
+    <form action="/action_page.php" method="post" ng-submit="handlesubmit()" class="form" >
+    
+      <div class="container">
+        <input type="text" placeholder="Email" name="uname" ng-model="username" required="">
+        <input type="password" placeholder="password" name="psw" ng-model="password" required="">  
+        <br><button type="submit">LOGIN</button><br>
+         <!-- <span class="psw" ><a routerLink='/forgotpwd' class="text-underline-hover-psw">Forgot Password?</a></span>  -->
+
+         <!-- <span  class="text-danger" style="color: red">{{error}}</span> -->
+         
+         
+      </div>
+    
+    </form>
+  </div>
+
+  
+    </body>
+
+   

@@ -1,0 +1,33 @@
+
+
+    <h4> All View Trainer </h4>
+    <div class="container">
+        <table style="width:100%" style="height:300%" style="border-radius:20px"  >
+        <tr style="height: 30px">
+        <th>Trainer ID</th>
+        <th>Trainer Name</th>
+        <th>Batch Name</th>
+        <th>Domain</th>
+        <th>Subject</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        </tr>
+        
+        <tr *ngFor="let trainer of trainers" style="height:30px">
+            <td>{{trainer.id}}</td>
+            <td>{{trainer.name}}</td>
+            <td>{{trainer.batchname}}
+            <td>{{trainer.domain}}</td>
+            <td>{{trainer.stime}}</td>
+            <td>{{trainer.etime}}</td>
+        <div class=" buttons">
+            <button class="btn btn-primary" routerLink="/update" ng-click="editTrainer($index)">Edit</button>
+            <button class="btn btn-danger" ng-click="deleteTrainer($index)">Delete</button>
+            </div>
+         
+        </tr>
+        </table>
+        <div class="tbn">
+        <a class="btn btn-primary" routerLink='/home' role="button">BACK</a>
+        </div>
+

@@ -1,0 +1,180 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>  
+
+  <h2 align="center">Add New Trainer's Schedule </h2>
+  <div class="container" style="max-width:1200px;padding:40px 20px;background:#ebeff2" align="center">
+   
+    <form class="form-horizontal" role="form" action="/action_page.php" (ngSubmit)="onSubmit()">
+      <div class="row row-cols-3 pt-3">
+        <div class="col text-end">
+          <label for="trainerid" class ="control-label col-sm-3"> Trainer ID:</label>
+        </div>
+      <div class="col-4">
+          <input type="text" class="form-control" id="trainerid"  name="nameVariable" [(ngModel)]="trainer.id">
+      </div>
+      </div>
+    <div class="row row-cols-3 pt-3">
+      <div class="col text-end">
+        <label for="email" class ="control-label col-sm-4">Trainer Name:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" id="names"  name="nameVariable" [(ngModel)]="trainer.name" >
+      </div>
+    </div>
+    <div class="row row-cols-3 pt-3">
+      <div class="col text-end">
+        <label for="email" class ="control-label col-sm-3" >Batch Name:</label>
+      </div>
+    <div class="col-3" ng-app="myApp" ng-controller="myCtrl">
+      <select name="batch" id="batch" style="width:368px"[(ngModel)]="trainer.batchname">
+        <option value="select">Select a batch</option>
+        <option value="itfs">ITFS</option>
+        <option value="bnk">BNK</option>
+        <option value="acc">Financial account</option>
+        <option value="acc">Soft Skils</option>
+      </select>
+      <!-- <select ng-model="trainer.batchname" ng-options=" x for x in names" >
+       
+      </select> -->
+    </div>
+    </div>
+     
+      <div class="row row-cols-3 pt-3">
+        <div class="col text-end">
+            <label for="nameVariable" class="form-label" id="domain">Domain:</label>
+       
+        </div>
+        <div class="col-4">
+          <select name="domain" id="domain" style="width:368px"  [(ngModel)]="trainer.domain">
+            <option value="select">Select a domain</option>
+            <option value="it">IT</option>
+            <option value="nonit">Non IT</option>
+            <option value="bpa">BPA</option>
+            <option value="oth">Others</option>
+            </select>
+        </div>
+    </div>
+      <div class="row row-cols-3 pt-3">
+        <div class="col text-end">
+        <label for="nameVariable" class ="form-label" id="sub">Subject:</label>
+       </div>
+       <div class="col-4">
+        <select name="sub" id="sub" style="width:368px" [(ngModel)]="trainer.subject">
+          <option value="select">Select Subject</option>
+          <option value="java">Java</option>
+          <option value="mysql">MYSQL</option>
+          <option value="js">JavaScript</option>
+          <option value="angular">Angular</option>
+          <option value="sb">SpringBoot</option>
+          <option value="mso">MS Office</option>
+          <option value="ss">SoftSkills</option>
+          <option value="eng">English</option>
+          <option value="pni">Powerbi</option>
+          <option value="pa">PowerAutomation</option>
+          </select>
+        </div>
+      </div>
+       
+   
+      <br>
+      
+      <div class="row row-cols-3 pt-3">
+        <div class="col text-end">
+            <label for="nameVariable" class="form-label">Start Date:</label>
+        </div>
+      
+        <div class="col-4">
+            <input type="date" class="form-control" name="nameVariable" >
+        </div>
+        </div>
+    <div class="row row-cols-3 pt-3">
+      <div class="col text-end">
+          <label for="nameVariable" class="form-label">End Date:</label>
+      </div>
+      <div class="col-4">
+          <input type="date" class="form-control" name="nameVariable" >
+      </div>
+      </div>
+        <br>
+
+     
+        <div class="text-center" >
+         <button type="submit" class="btn btn-primary">SUBMIT</button>
+         <button type="reset" class="btn btn-success">RESET</button>
+         <button type="button" class="btn btn-danger">CANCEL</button>
+    
+        </div>
+     
+  </form>
+</div>
+<script>
+  function populate()
+  {
+    var s1=document.getElementById(lang1);
+    var s2=document.getElementById(lang2);
+    s2.innerHTML="";
+    var optionArray;
+    if(s1.value=="it")
+    {
+       optionArray=['|','select|Select a subject','java|JAVA','mysql|MySQL','js|JS','angular|Angular','springboot|Springboot','manual testing|Manual testing','automation testing|Automation testing','others|Others'];
+    }
+    else if(s1.value== "nonit")
+    {
+       optionArray=['|','msOffice|MS Office','softskills|Softskills','english|English'];
+    }
+    else if(s1.value== "bpa")
+    {
+       optionArray=['|','msOffice|MS Office','powerbi|powerbi','powerautomation|PowerAutomation','softskills|Softskills','english|English','other|Others'];
+    }
+    // for(var option in optionArray)
+    // {
+    //   var pair=optionArray[option].split("|");
+    //   var newoption=document.createElement("option");
+
+    //   newoption.value=pair[0];
+    //   newoption.innerHTML=pair[1];
+    //   s2.options.add(newoption);
+    // }
+    document.getElementById(lang2).innerHTML=optionArray;
+
+  }
+
+  var app=angular.module('myApp',[]);
+  app.controller('myCtrl',function($scope){
+    $scope.names=["Select a batch","ITFS","BNK","Financial Account","SoftSkills"];
+  });
+
+  
+
+function handlesubmit()
+{
+  var t1=document.getElementById(trainerid).value;
+  var t2=document.getElementById(names).value;
+  var t3=document.getElementById(batch).value;
+  var t4=document.getElementById(domain).value;
+  var t5=document.getElementById(sub).value;
+
+// if(t1=="" || t2=="" || t3=="" || t4=="" || t5=="")
+// {
+//   alert('pls fill ');
+//   console.log(this.trainer);
+// }
+
+//  else{
+//   onSubmit(){
+    
+//    {
+//       console.log(this.trainer);
+//       this.saveTrainer();
+      
+//     }
+//   }
+//   }
+   
+  }
+</script>
+
+
+</body>
