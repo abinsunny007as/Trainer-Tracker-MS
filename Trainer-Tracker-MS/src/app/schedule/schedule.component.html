@@ -45,7 +45,7 @@
                           <label for="trainerid" class ="control-label col-sm-4"> Subject:</label>
                         </div>
                         <div class="col-4">
-                          <label for="trainerid"  name="nameVariable"></label>{{trainer.subject}}
+                          <label for="trainerid"  name="subject"></label>{{trainer.subject}}
                       </div>
                       </div>
                       <div class="row row-cols-3 pt-3">
@@ -53,7 +53,7 @@
                               <label for="trainerid" class ="control-label col-sm-4"> Start Date:</label>
                             </div>
                             <div class="col-4">
-                              <label for="trainerid"  name="nameVariable"></label>{{trainer.stime}}
+                              <label for="trainerid"  name="stime"></label>{{trainer.stime}}
                           </div>
                           </div>
                           <div class="row row-cols-3 pt-3">
@@ -65,7 +65,7 @@
                               </div>
                               </div>
                               <div class="text-center" >
-                                <button  type="submit" class="btn btn-primary">UPDATE</button>
+                                <button  type="submit" class="btn btn-primary" (click)="ngOnInit()">Search</button>
                                                    
                                </div>
                           </form>

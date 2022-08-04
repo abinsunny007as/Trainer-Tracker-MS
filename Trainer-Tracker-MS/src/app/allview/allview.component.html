@@ -23,11 +23,12 @@
             <td>{{trainer.name}}</td>
             <td>{{trainer.batchname}}
             <td>{{trainer.domain}}</td>
+            <td>{{trainer.subject}}</td>
             <td>{{trainer.stime}}</td>
             <td>{{trainer.etime}}</td>
-            <td></td>
+            
         <td><div class=" buttons">
-            <button class="btn btn-primary" routerLink="/update" ng-click="editTrainer($index)">Edit</button>
+            <button class="btn btn-primary" routerLink="/update" (click)="updateDetails(trainer.id)">Edit</button>
             <button class="btn btn-danger" (click)="deleteTrainer(trainer.id)">Delete</button>
             </div></td>
          

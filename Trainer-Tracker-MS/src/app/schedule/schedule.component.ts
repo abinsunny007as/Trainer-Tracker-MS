@@ -16,11 +16,20 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     this .id =this.route.snapshot.params['id'];
-
     this.trainer =new Trainer();
     this.authService.getTrainerById(this.id).subscribe(data => {
     this.trainer =data;
   });
+    this.authService.getTrainerById(this.id)
+    .subscribe({
+      next:(data)=>{
+       
+        console.log(data);
+      },
+      error:(e)=>console.error(e)
+    });
   }
 
-}
+  }
+
+

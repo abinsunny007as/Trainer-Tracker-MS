@@ -12,7 +12,7 @@
             <label for="trainerid" class ="control-label col-sm-3"> Trainer ID:</label>
           </div>
         <div class="col-4">
-            <input type="text" class="form-control" id="trainerid"  name="nameVariable" [(ngModel)]="trainer.id">
+            <input type="text" class="form-control"   name="id" [(ngModel)]="currentForm.id">
         </div>
         </div>
       <div class="row row-cols-3 pt-3">
@@ -20,7 +20,7 @@
           <label for="email" class ="control-label col-sm-4">Trainer Name:</label>
         </div>
         <div class="col-4">
-          <input type="text" class="form-control" id="email"  name="nameVariable" [(ngModel)]="trainer.name">
+          <input type="text" class="form-control" id="email"  name="name" [(ngModel)]="currentForm.name">
         </div>
       </div>
       <div class="row row-cols-3 pt-3">
@@ -28,7 +28,7 @@
             <label for="email" class ="control-label col-sm-3">Batch Name:</label>
           </div>
         <div class="col-3">
-          <select name="batch" id="lang" style="width:368px" [(ngModel)]="trainer.batchname">
+          <select id="lang" style="width:368px" name="batchname" [(ngModel)]="currentForm.batchname">
             <option value="select">Select a batch</option>
             <option value="itfs">ITFS</option>
             <option value="bnk">BNK</option>
@@ -43,12 +43,12 @@
                 <label for="nameVariable" class="form-label">Domain:</label>
             </div>
             <div class="col-4">
-              <select name="domain" id="lang" style="width:368px">
+              <select name="domain" style="width:368px"[(ngModel)]="currentForm.domain">
                 <option value="select">Select a domain</option>
-                <option value="it">IT</option>
-                <option value="nonit">Non IT</option>
-                <option value="bpa">BPA</option>
-                <option value="oth">Others</option>
+                <option value="IT">IT</option>
+                <option value="Non IT">Non IT</option>
+                <option value="BPA">BPA</option>
+                <option value="Others">Others</option>
                 </select>
             </div>
         </div>
@@ -57,11 +57,18 @@
             <label for="nameVariable" class ="form-label">Subject:</label>
           </div>
         <div class="col-4">
-          <select name="sub" id="lang" style="width:368px">
-            <option value="select">Select a Subject</option>
-            <option value="java">Java</option>
-            <option value="sql">SQL</option>
-            <option value="js">JS</option>
+          <select name="subject" style="width:368px" [(ngModel)]="currentForm.subject">
+            <option value="select">Select Subject</option>
+            <option value="Java">Java</option>
+            <option value="MySQL">MYSQL</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Angular">Angular</option>
+            <option value="SpringBoot">SpringBoot</option>
+            <option value="MS Office">MS Office</option>
+            <option value="SoftSkills">SoftSkills</option>
+            <option value="English">English</option>
+            <option value="PowerBi">Powerbi</option>
+            <option value="power Automation">PowerAutomation</option>
             </select>
         </div>
           </div>
@@ -71,7 +78,7 @@
                 <label for="nameVariable" class="form-label">Start Date:</label>
             </div>
             <div class="col-4">
-                <input type="date" class="form-control" name="nameVariable" >
+                <input type="date" class="form-control" name="stime" [(ngModel)]="currentForm.stime">
             </div>
         </div>
         <div class="row row-cols-3 pt-3">
@@ -79,15 +86,15 @@
               <label for="nameVariable" class="form-label">End Date:</label>
           </div>
           <div class="col-4">
-              <input type="date" class="form-control" name="nameVariable" >
+              <input type="date" class="form-control" name="etime" [(ngModel)]="currentForm.etime" >
           </div>
       </div>
             <br>
   
          
             <div class="text-center" >
-             <button  type="submit" class="btn btn-primary">UPDATE</button>
-             <a class="btn btn-danger" routerLink='/home' role="button">CANCEL</a>
+             <button  type="submit" class="btn btn-primary" routerLink="/allview" (click)="updateTrainer()">UPDATE</button>
+             <a class="btn btn-danger" routerLink='/allview' role="button">CANCEL</a>
         
             </div>
          

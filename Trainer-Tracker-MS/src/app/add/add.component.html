@@ -28,7 +28,7 @@
         <label for="email" class ="control-label col-sm-3" >Batch Name:</label>
       </div>
     <div class="col-3" ng-app="myApp" ng-controller="myCtrl">
-      <select name="batch" id="batch" style="width:368px"[(ngModel)]="trainer.batchname">
+      <select name="batchname" style="width:368px"[(ngModel)]="trainer.batchname">
         <option value="select">Select a batch</option>
         <option value="ITFS">ITFS</option>
         <option value="BNK">BNK</option>
@@ -47,7 +47,7 @@
        
         </div>
         <div class="col-4">
-          <select name="domain" id="domain" style="width:368px"  [(ngModel)]="trainer.domain">
+          <select name="domain" style="width:368px"  [(ngModel)]="trainer.domain">
             <option value="select">Select a domain</option>
             <option value="IT">IT</option>
             <option value="Non IT">Non IT</option>
@@ -61,7 +61,7 @@
         <label for="nameVariable" class ="form-label" id="sub">Subject:</label>
        </div>
        <div class="col-4">
-        <select name="sub" id="sub" style="width:368px" [(ngModel)]="trainer.subject">
+        <select name="subject" style="width:368px" [(ngModel)]="trainer.subject">
           <option value="select">Select Subject</option>
           <option value="Java">Java</option>
           <option value="MySQL">MYSQL</option>
@@ -86,7 +86,7 @@
         </div>
       
         <div class="col-4">
-            <input type="date" class="form-control" name="nameVariable" >
+            <input type="date" class="form-control" name="nameVariable" [(ngModel)]="trainer.stime">
         </div>
         </div>
     <div class="row row-cols-3 pt-3">
@@ -94,7 +94,7 @@
           <label for="nameVariable" class="form-label">End Date:</label>
       </div>
       <div class="col-4">
-          <input type="date" class="form-control" name="nameVariable" >
+          <input type="date" class="form-control" name="nameVariable" [(ngModel)]="trainer.etime">
       </div>
       </div>
         <br>

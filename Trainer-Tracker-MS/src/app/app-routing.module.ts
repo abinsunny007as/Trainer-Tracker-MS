@@ -15,9 +15,10 @@ const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'forgotpwd',component:ForgotpwdComponent},
   {path:'add',component:AddComponent},
-  {path:'update',component:UpdateComponent},
+  {path:'update/:id',component:UpdateComponent},
   {path:'allview',component:AllviewComponent },
-  {path:'schedule',component:ScheduleComponent}
+  {path:'schedule',component:ScheduleComponent},
+  
 ];
 
 @NgModule({

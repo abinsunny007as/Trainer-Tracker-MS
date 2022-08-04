@@ -23,13 +23,13 @@ export class AuthService {
   }
 
 
-  getTrainerById(id:number): Observable<Trainer>{
+  getTrainerById(id:any): Observable<Trainer>{
     return this.httpClient.get<Trainer>(`${this.baseURL}/${id}`);
   }
-  updateTrainer(id:number):Observable<object>{
+  updateTrainer(id:any, data:any):Observable<any>{
     return this.httpClient.put(`${this.baseURL}/${id}`,Trainer);
   }
   deleteTrainer(id:number) {  
-    return this.httpClient.get(`${this.baseURL}/delete/${id}`);  
+    return this.httpClient.delete(`${this.baseURL}/delete/${id}`);  
   }
 }
