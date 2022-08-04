@@ -28,5 +28,16 @@ export class AllviewComponent implements OnInit {
   updateDetails (id:number){
     this.router.navigate(['update',id]);
   }
+   
+deleteTrainer(id:number) {  
+  this.authService.deleteTrainer(id).subscribe(res => {  
+    this.trainers.splice(id, 1);  
+  }); 
+
+
+
+
+}  
+
 
 }

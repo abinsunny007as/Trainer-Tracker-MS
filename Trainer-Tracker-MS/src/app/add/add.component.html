@@ -6,7 +6,7 @@
   <h2 align="center">Add New Trainer's Schedule </h2>
   <div class="container" style="max-width:1200px;padding:40px 20px;background:#ebeff2" align="center">
    
-    <form class="form-horizontal" role="form" action="/action_page.php" (ngSubmit)="onSubmit()">
+    <form  class="form-horizontal" role="form" action="/action_page.php" (ngSubmit)="onSubmit()">
       <div class="row row-cols-3 pt-3">
         <div class="col text-end">
           <label for="trainerid" class ="control-label col-sm-3"> Trainer ID:</label>
@@ -30,10 +30,10 @@
     <div class="col-3" ng-app="myApp" ng-controller="myCtrl">
       <select name="batch" id="batch" style="width:368px"[(ngModel)]="trainer.batchname">
         <option value="select">Select a batch</option>
-        <option value="itfs">ITFS</option>
-        <option value="bnk">BNK</option>
-        <option value="acc">Financial account</option>
-        <option value="acc">Soft Skils</option>
+        <option value="ITFS">ITFS</option>
+        <option value="BNK">BNK</option>
+        <option value="Financial Account">Financial account</option>
+        <option value="SoftSkills">Soft Skils</option>
       </select>
       <!-- <select ng-model="trainer.batchname" ng-options=" x for x in names" >
        
@@ -49,10 +49,10 @@
         <div class="col-4">
           <select name="domain" id="domain" style="width:368px"  [(ngModel)]="trainer.domain">
             <option value="select">Select a domain</option>
-            <option value="it">IT</option>
-            <option value="nonit">Non IT</option>
-            <option value="bpa">BPA</option>
-            <option value="oth">Others</option>
+            <option value="IT">IT</option>
+            <option value="Non IT">Non IT</option>
+            <option value="BPA">BPA</option>
+            <option value="Others">Others</option>
             </select>
         </div>
     </div>
@@ -63,16 +63,16 @@
        <div class="col-4">
         <select name="sub" id="sub" style="width:368px" [(ngModel)]="trainer.subject">
           <option value="select">Select Subject</option>
-          <option value="java">Java</option>
-          <option value="mysql">MYSQL</option>
-          <option value="js">JavaScript</option>
-          <option value="angular">Angular</option>
-          <option value="sb">SpringBoot</option>
-          <option value="mso">MS Office</option>
-          <option value="ss">SoftSkills</option>
-          <option value="eng">English</option>
-          <option value="pni">Powerbi</option>
-          <option value="pa">PowerAutomation</option>
+          <option value="Java">Java</option>
+          <option value="MySQL">MYSQL</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Angular">Angular</option>
+          <option value="SpringBoot">SpringBoot</option>
+          <option value="MS Office">MS Office</option>
+          <option value="SoftSkills">SoftSkills</option>
+          <option value="English">English</option>
+          <option value="PowerBi">Powerbi</option>
+          <option value="power Automation">PowerAutomation</option>
           </select>
         </div>
       </div>

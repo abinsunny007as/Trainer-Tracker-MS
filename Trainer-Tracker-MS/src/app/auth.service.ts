@@ -29,4 +29,7 @@ export class AuthService {
   updateTrainer(id:number):Observable<object>{
     return this.httpClient.put(`${this.baseURL}/${id}`,Trainer);
   }
+  deleteTrainer(id:number) {  
+    return this.httpClient.get(`${this.baseURL}/delete/${id}`);  
+  }
 }

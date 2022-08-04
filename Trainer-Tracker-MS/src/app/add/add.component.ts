@@ -11,6 +11,7 @@ import { AuthService } from '../auth.service';
 export class AddComponent implements OnInit {
 
   trainer: Trainer = new Trainer();
+  us: any;
   constructor(private authService :AuthService,
     private router:Router) { }
 
@@ -33,5 +34,13 @@ export class AddComponent implements OnInit {
     console.log(this.trainer);
     this.saveTrainer();
   }
+//   registerSucess:boolean = false;
+
+//  createUserData(ff: any){
+//     this.us.createform(ff).subscribe((user:any)=>{
+//       console.log("Success register");
+//       this.registerSucess=true;
+//     });
+//   }
 
 }
