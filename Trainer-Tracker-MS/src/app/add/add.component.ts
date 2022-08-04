@@ -17,7 +17,17 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+submit(){
+  if(this.trainer.id=="" || this.trainer.name=="" || this.trainer.batchname=="" || this.trainer.domain=="" || this.trainer.subject=="" || this.trainer.stime=="" || this.trainer.etime=="")
+  {
+    alert("Please! Fill with all inserts!!");
+  }
+  else{
+    alert("Successfully!!")
+    this.router.navigate(['/home']);
+  
+  }
+}
   saveTrainer() {
     this. authService.createTrainer(this.trainer).subscribe(data=> {
       console.log(data);

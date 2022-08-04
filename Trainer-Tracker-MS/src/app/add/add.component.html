@@ -101,7 +101,7 @@
 
      
         <div class="text-center" >
-         <button type="submit" class="btn btn-primary">SUBMIT</button>
+         <button type="submit" class="btn btn-primary"(click)="submit()">SUBMIT</button>
          <button type="reset" class="btn btn-success">RESET</button>
          <button type="button" class="btn btn-danger">CANCEL</button>
     
@@ -109,72 +109,4 @@
      
   </form>
 </div>
-<script>
-  function populate()
-  {
-    var s1=document.getElementById(lang1);
-    var s2=document.getElementById(lang2);
-    s2.innerHTML="";
-    var optionArray;
-    if(s1.value=="it")
-    {
-       optionArray=['|','select|Select a subject','java|JAVA','mysql|MySQL','js|JS','angular|Angular','springboot|Springboot','manual testing|Manual testing','automation testing|Automation testing','others|Others'];
-    }
-    else if(s1.value== "nonit")
-    {
-       optionArray=['|','msOffice|MS Office','softskills|Softskills','english|English'];
-    }
-    else if(s1.value== "bpa")
-    {
-       optionArray=['|','msOffice|MS Office','powerbi|powerbi','powerautomation|PowerAutomation','softskills|Softskills','english|English','other|Others'];
-    }
-    // for(var option in optionArray)
-    // {
-    //   var pair=optionArray[option].split("|");
-    //   var newoption=document.createElement("option");
-
-    //   newoption.value=pair[0];
-    //   newoption.innerHTML=pair[1];
-    //   s2.options.add(newoption);
-    // }
-    document.getElementById(lang2).innerHTML=optionArray;
-
-  }
-
-  var app=angular.module('myApp',[]);
-  app.controller('myCtrl',function($scope){
-    $scope.names=["Select a batch","ITFS","BNK","Financial Account","SoftSkills"];
-  });
-
-  
-
-function handlesubmit()
-{
-  var t1=document.getElementById(trainerid).value;
-  var t2=document.getElementById(names).value;
-  var t3=document.getElementById(batch).value;
-  var t4=document.getElementById(domain).value;
-  var t5=document.getElementById(sub).value;
-
-// if(t1=="" || t2=="" || t3=="" || t4=="" || t5=="")
-// {
-//   alert('pls fill ');
-//   console.log(this.trainer);
-// }
-
-//  else{
-//   onSubmit(){
-    
-//    {
-//       console.log(this.trainer);
-//       this.saveTrainer();
-      
-//     }
-//   }
-//   }
-   
-  }
-</script>
-
-
 </body>
