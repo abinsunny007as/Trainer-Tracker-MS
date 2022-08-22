@@ -6,13 +6,13 @@
     <h2 align="center">Trainer's Schedule </h2>
     <div class="container" style="max-width:1200px;padding:40px 20px;background:#ebeff2" align="center">
      
-      <form class="form-horizontal" role="form" action="/action_page.php">
+      <form class="form-horizontal" role="form">
         <div class="row row-cols-3 pt-3">
           <div class="col text-end">
             <label for="trainerid" class ="control-label col-sm-3"> Trainer ID:</label>
           </div>
         <div class="col-4">
-            <input type="text" class="form-control" id="trainerid"  name="nameVariable" [(ngModel)]="trainer.id">
+            <input type="text" class="form-control" id="trainerid"  name="nameVariable" [(ngModel)]="currentForm.id">
         </div>
         </div>
         <div class="row row-cols-3 pt-3">
@@ -20,7 +20,7 @@
               <label for="trainerid" class ="control-label col-sm-4"> Trainer Name:</label>
             </div>
             <div class="col-4">
-              <label for="trainerid"  name="nameVariable"></label>{{trainer.name}}
+              <label for="trainerid"  name="nameVariable"></label>{{currentForm.name}}
           </div>
           </div>
               
@@ -29,7 +29,7 @@
                   <label for="trainerid" class ="control-label col-sm-4">Batch Name:</label>
               </div>
               <div class="col-4">
-                <label for="trainerid"  name="nameVariable"></label>{{trainer.batchname}}
+                <label for="trainerid"  name="nameVariable"></label>{{currentForm.batchname}}
               </div>
             </div>
               <div class="row row-cols-3 pt-3">
@@ -37,7 +37,7 @@
                       <label for="trainerid" class ="control-label col-sm-4"> Domain:</label>
                     </div>
                     <div class="col-4">
-                      <label for="trainerid"  name="nameVariable"></label>{{trainer.domain}}
+                      <label for="trainerid"  name="nameVariable"></label>{{currentForm.domain}}
                   </div>
                   </div>
                   <div class="row row-cols-3 pt-3">
@@ -45,7 +45,7 @@
                           <label for="trainerid" class ="control-label col-sm-4"> Subject:</label>
                         </div>
                         <div class="col-4">
-                          <label for="trainerid"  name="subject"></label>{{trainer.subject}}
+                          <label for="trainerid"  name="subject"></label>{{currentForm.subject}}
                       </div>
                       </div>
                       <div class="row row-cols-3 pt-3">
@@ -53,7 +53,7 @@
                               <label for="trainerid" class ="control-label col-sm-4"> Start Date:</label>
                             </div>
                             <div class="col-4">
-                              <label for="trainerid"  name="stime"></label>{{trainer.stime}}
+                              <label for="trainerid"  name="stime"></label>{{currentForm.stime}}
                           </div>
                           </div>
                           <div class="row row-cols-3 pt-3">
@@ -61,11 +61,11 @@
                                   <label for="trainerid" class ="control-label col-sm-4"> End Date:</label>
                                 </div>
                                 <div class="col-4">
-                                  <label for="trainerid"  name="nameVariable"></label>{{trainer.etime}}
+                                  <label for="trainerid"  name="nameVariable"></label>{{currentForm.etime}}
                               </div>
                               </div>
                               <div class="text-center" >
-                                <button  type="submit" class="btn btn-primary" (click)="ngOnInit()">Search</button>
+                                <button  type="button" class="btn btn-primary"  (click)="getTrainer()" >Search</button>
                                                    
                                </div>
                           </form>

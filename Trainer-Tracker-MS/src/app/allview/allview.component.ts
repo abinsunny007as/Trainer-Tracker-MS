@@ -10,17 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AllviewComponent implements OnInit {
 
-  // @Input() viewMode = false;
-  // @Input() currentForm: Trainer = {
-  //   id:'',
-  //   name:'',
-  //   batchname:'',
-  //   domain:'',
-  //   subject:'',
-  //   stime:'',
-  //   etime:'',  
-  // };
-  // message='';
+
 
   trainers!: Trainer[];
   constructor(private authService :AuthService,
@@ -42,12 +32,7 @@ updateTrainer(id: number){
   this.router.navigate(['update', id]);
 }
 
-// deleteTrainer(id: any){
-//   this.authService.deleteTrainer(id).subscribe( data => {
-//     console.log(data);
-//     this.getTrainers();
-//   })
-// }
+
 
 deleteTrainer(id:any) {
   this.authService.deleteTrainer(id)

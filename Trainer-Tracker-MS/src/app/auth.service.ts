@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Trainer } from './trainer';
 import { Observable } from 'rxjs';
-import { HttpClient,HttpHeaders } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 
 
 const baseURL="http://localhost:8088/trainer"
