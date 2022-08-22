@@ -22,12 +22,12 @@ export class ScheduleComponent implements OnInit {
   });
     this.authService.getTrainerById(this.id)
     .subscribe({
-      next:(data)=>{
-       
-        console.log(data);
-      },
-      error:(e)=>console.error(e)
-    });
+    next:(data)=>{
+       this.trainer=data;
+         console.log(data);
+       },
+       error:(e)=>console.error(e)
+     });
   }
 
   }

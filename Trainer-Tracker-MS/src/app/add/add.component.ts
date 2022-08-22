@@ -17,40 +17,31 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
   }
-submit(){
-  if(this.trainer.id=="" || this.trainer.name=="" || this.trainer.batchname=="" || this.trainer.domain=="" || this.trainer.subject=="" || this.trainer.stime=="" || this.trainer.etime=="")
-  {
-    alert("Please! Fill with all inserts!!");
-  }
-  else{
-    alert("Successfully!!")
-    this.router.navigate(['/home']);
-  
-  }
-}
+
   saveTrainer() {
-    this. authService.createTrainer(this.trainer).subscribe(data=> {
+    this.authService.createTrainer(this.trainer).subscribe(data =>{
       console.log(data);
-      this.goToTrainerList();
     },
     error => console.log(error));
-
   }
+
   goToTrainerList(){
     this.router.navigate(['/trainer']);
   }
-  
-  onSubmit(){
-    console.log(this.trainer);
-    this.saveTrainer();
+
+  onSubmit() {
+    if(this.trainer.id=="" || this.trainer.name=="" || this.trainer.batchname=="" || this.trainer.domain=="" || this.trainer.subject=="" || this.trainer.stime=="" || this.trainer.etime=="")
+    {
+      alert("Please! Fill with all inserts!!");
+    }
+    else{
+      alert("Successfully!!")
+      console.log(this.trainer);
+      this.saveTrainer();
+      this.router.navigate(['/home']);
+    
+    }
+   
   }
-//   registerSucess:boolean = false;
-
-//  createUserData(ff: any){
-//     this.us.createform(ff).subscribe((user:any)=>{
-//       console.log("Success register");
-//       this.registerSucess=true;
-//     });
-//   }
-
+ 
 }

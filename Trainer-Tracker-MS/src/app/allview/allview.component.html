@@ -1,7 +1,4 @@
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
   <body>
     <div class="colour">  
     <h4> All View Trainer </h4>
@@ -29,8 +26,8 @@
             <td>{{trainer.etime}}</td>
             
         <td><div class=" buttons">
-            <button class="btn btn-primary" routerLink="/update" (click)="updateDetails(trainer.id)">Edit</button>
-            <button class="btn btn-danger" (click)="deleteTrainer(trainer.id)">Delete</button>
+            <button class="btn btn-primary" routerLink="/update" (click)="updateTrainer(trainer.id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteTrainer(trainer.id)">Delete</button>
             </div></td>
          
         </tr>

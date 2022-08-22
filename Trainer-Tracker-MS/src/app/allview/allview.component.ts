@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Trainer } from '../trainer';
 import { Router } from '@angular/router';
@@ -10,6 +10,18 @@ import { Router } from '@angular/router';
 })
 export class AllviewComponent implements OnInit {
 
+  // @Input() viewMode = false;
+  // @Input() currentForm: Trainer = {
+  //   id:'',
+  //   name:'',
+  //   batchname:'',
+  //   domain:'',
+  //   subject:'',
+  //   stime:'',
+  //   etime:'',  
+  // };
+  // message='';
+
   trainers!: Trainer[];
   constructor(private authService :AuthService,
     private router:Router) { }
@@ -18,26 +30,36 @@ export class AllviewComponent implements OnInit {
     this.getTrainers();
   }
   private getTrainers(){
-    this.authService.getTrainerList().subscribe(data=>this.trainers=data);
+    this.authService.getTrainerList().subscribe(data=>{
+      this.trainers=data;
+    });
   }
 
   scheduleDetails (id:number){
     this.router.navigate(['schedule',id]);
-  }
+  } 
+updateTrainer(id: number){
+  this.router.navigate(['update', id]);
+}
 
-  updateDetails (id:number){
-    this.router.navigate(['update',id]);
-  }
-   
-deleteTrainer(id:number) {  
-  this.authService.deleteTrainer(id).subscribe(res => {  
-    this.trainers.splice(id, 1);  
-  }); 
+// deleteTrainer(id: any){
+//   this.authService.deleteTrainer(id).subscribe( data => {
+//     console.log(data);
+//     this.getTrainers();
+//   })
+// }
 
+deleteTrainer(id:any) {
+  this.authService.deleteTrainer(id)
+  .subscribe( data => {
+    console.log(data);
+    this.getTrainers();
+    window.location.reload();
 
-
+      })
+}
 
 }  
 
 
-}
+
